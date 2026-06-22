@@ -1,0 +1,219 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ProgrammeCategory {
+  shelter
+  education
+  food
+  childcare
+  general
+}
+
+enum DonationFrequency {
+  one_time
+  monthly
+  quarterly
+  half_yearly
+  yearly
+}
+
+enum PaymentGateway {
+  razorpay
+  stripe
+  payU
+  upi
+}
+
+enum PaymentStatus {
+  pending
+  captured
+  failed
+  refunded
+}
+
+enum VolunteerStatus {
+  pending
+  active
+  inactive
+}
+
+enum ContactFormType {
+  general
+  admission
+  media
+  partnership
+}
+
+enum ContactStatus {
+  new
+  read
+  responded
+  closed
+}
+
+enum DocumentCategory {
+  annual_report
+  audit
+  trust_deed
+  certification
+  other
+}
+
+enum AdminRole {
+  superadmin
+  editor
+  viewer
+}
+
+enum BlogCategory {
+  education
+  health
+  events
+  general
+  impact
+}
+
+model Donor {
+  id                    String            @id @default(uuid()) @db.Uuid
+  name                  Bytes                              // AES-256 Encrypted
+  email                 String            @unique          // E.g., lookup identifier (or encrypted with unique constraint)
+  phone                 Bytes?                             // AES-256 Encrypted
+  pan                   Bytes?                             // AES-256 Encrypted
+  address               Bytes?                             // AES-256 Encrypted
+  country               String            @db.Char(2)
+  is_foreign            Boolean           @default(false)
+  created_at            DateTime          @default(now()) @db.Timestamptz
+  consent_at            DateTime          @db.Timestamptz
+  consent_ip            String            @db.VarChar(45)  // Supports IPv4 & IPv6
+  erasure_requested_at  DateTime?         @db.Timestamptz
+  donations             Donation[]
+
+  @@map("donors")
+}
+
+model Donation {
+  id                 String             @id @default(uuid()) @db.Uuid
+  donor_id           String             @db.Uuid
+  donor              Donor              @relation(fields: [donor_id], references: [id], onDelete: Restrict)
+  amount             Decimal            @db.Decimal(10, 2)
+  currency           String             @default("INR") @db.Char(3)
+  programme          ProgrammeCategory
+  frequency          DonationFrequency
+  gateway            PaymentGateway
+  gateway_order_id   String             @db.VarChar(64)
+  gateway_payment_id String?            @db.VarChar(64)
+  status             PaymentStatus      @default(pending)
+  receipt_url        String?            @db.Text
+  created_at         DateTime           @default(now()) @db.Timestamptz
+
+  @@map("donations")
+}
+
+model Volunteer {
+  id           String          @id @default(uuid()) @db.Uuid
+  name         String          @db.VarChar(120)
+  email        Bytes                           // AES-256 Encrypted
+  phone        Bytes?                          // AES-256 Encrypted
+  city         String          @db.VarChar(60)
+  skills       String[]
+  availability Json
+  status       VolunteerStatus @default(pending)
+  notes        String?         @db.Text
+  created_at   DateTime        @default(now()) @db.Timestamptz
+  consent_at   DateTime        @db.Timestamptz
+
+  @@map("volunteers")
+}
+
+model ContactSubmission {
+  id           String          @id @default(uuid()) @db.Uuid
+  form_type    ContactFormType
+  name         String          @db.VarChar(120)
+  email        Bytes                           // AES-256 Encrypted
+  phone        Bytes?                          // AES-256 Encrypted
+  message      String          @db.Text
+  status       ContactStatus   @default(new)
+  created_at   DateTime        @default(now()) @db.Timestamptz
+  responded_at DateTime?       @db.Timestamptz
+
+  @@map("contact_submissions")
+}
+
+model Programme {
+  id             String            @id @default(uuid()) @db.Uuid
+  slug           String            @unique @db.VarChar(60)
+  title          String            @db.VarChar(120)
+  title_te       String?           @db.VarChar(120)
+  summary        String            @db.Text
+  summary_te     String?           @db.Text
+  body_mdx       String            @db.Text
+  hero_image_url String            @db.Text
+  is_published   Boolean           @default(false)
+  updated_at     DateTime          @default(now()) @db.Timestamptz @updatedAt
+
+  @@map("programmes")
+}
+
+model Post {
+  id             String       @id @default(uuid()) @db.Uuid
+  slug           String       @unique @db.VarChar(120)
+  title          String       @db.VarChar(200)
+  excerpt        String       @db.Text
+  body_mdx       String       @db.Text
+  category       BlogCategory
+  hero_image_url String       @db.Text
+  author         String       @db.VarChar(80)
+  published_at   DateTime?    @db.Timestamptz
+  is_published   Boolean      @default(false)
+  created_at     DateTime     @default(now()) @db.Timestamptz
+
+  @@map("posts")
+}
+
+model Event {
+  id           String   @id @default(uuid()) @db.Uuid
+  title        String   @db.VarChar(200)
+  description  String   @db.Text
+  starts_at    DateTime @db.Timestamptz
+  ends_at      DateTime @db.Timestamptz
+  location     String   @db.VarChar(200)
+  location_url String?  @db.Text
+  is_published Boolean  @default(false)
+  created_at   DateTime @default(now()) @db.Timestamptz
+
+  @@map("events")
+}
+
+model Document {
+  id             String           @id @default(uuid()) @db.Uuid
+  title          String           @db.VarChar(200)
+  category       DocumentCategory
+  year           Int?             @db.SmallInt
+  file_url       String           @db.Text
+  file_size_kb   Int
+  download_count Int              @default(0)
+  uploaded_at    DateTime         @default(now()) @db.Timestamptz
+  is_public      Boolean          @default(true)
+
+  @@map("documents")
+}
+
+model AdminUser {
+  id            String    @id @default(uuid()) @db.Uuid
+  email         String    @unique @db.VarChar(255)
+  password_hash String    @db.Text
+  totp_secret   Bytes                             // AES-256 Encrypted
+  role          AdminRole @default(viewer)
+  last_login_at DateTime? @db.Timestamptz
+  created_at    DateTime  @default(now()) @db.Timestamptz
+
+  @@map("admin_users")
+}
