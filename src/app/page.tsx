@@ -34,23 +34,13 @@ const programmes = [
 const helpCards = [
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 0 0 0 0-7.78z"/></svg>
-    ),
-    titleKey: "home.help.donate.title",
-    descriptionKey: "home.help.donate.desc",
-    href: "/donate",
-    ctaKey: "home.help.donate.cta",
-    primary: true,
-  },
-  {
-    icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
     ),
     titleKey: "home.help.volunteer.title",
     descriptionKey: "home.help.volunteer.desc",
     href: "/volunteer",
     ctaKey: "home.help.volunteer.cta",
-    primary: false,
+    primary: true,
   },
   {
     icon: (
@@ -98,10 +88,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
               <Link
-                href="/donate"
+                href="/volunteer"
                 className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-[0.97]"
               >
-                {t('home.hero.ctaDonate')}
+                {t('nav.volunteer')}
               </Link>
               <Link
                 href="/programmes"
@@ -205,60 +195,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── DONATION BANNER ─── */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-primary to-secondary py-16 lg:py-20" aria-labelledby="donate-banner-heading">
-        <div className="pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOFYwaDYwdjYwSDM2eiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuMDMiLz48L2c+PC9zdmc+')] opacity-40" aria-hidden="true" />
-        <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:flex-row lg:justify-between lg:text-left lg:px-8">
-          <div>
-            <h2 id="donate-banner-heading" className="text-2xl font-bold text-white sm:text-3xl">
-              {t('home.banner.title')}{" "}
-              <span className="underline decoration-accent decoration-2 underline-offset-4">
-                {t('home.banner.amount')}
-              </span>
-            </h2>
-            <p className="mt-2 max-w-lg text-base text-white/80">
-              {t('home.banner.desc')}
-            </p>
-          </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            {donationTiers.map((tier) => (
-              <Link
-                key={tier.value}
-                href={`/donate?amount=${tier.value}`}
-                className="rounded-full border-2 border-white/30 bg-white/10 px-6 py-2.5 text-sm font-bold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                {tier.label}
-              </Link>
-            ))}
-            <Link
-              href="/donate"
-              className="rounded-full bg-white px-7 py-2.5 text-sm font-bold text-primary shadow-lg transition-all hover:bg-white/90 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.97]"
-            >
-              {t('home.banner.cta')}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TRUST SIGNALS ─── */}
-      <section className="py-12" aria-label="Trust credentials">
-        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-6 px-4 text-center sm:gap-10">
-          {[
-            { badge: "80G", labelKey: "home.trust.taxExempt" },
-            { badge: "12A", labelKey: "home.trust.registeredNgo" },
-            { badge: "FCRA", labelKey: "home.trust.foreignDonations" },
-            { badge: "SSL", labelKey: "home.trust.securePayments" },
-          ].map((item) => (
-            <div key={item.badge} className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-xs font-extrabold text-primary">
-                {item.badge}
-              </span>
-              <span className="text-sm font-medium text-muted-foreground">{t(item.labelKey)}</span>
-            </div>
-          ))}
-        </div>
-      </section>
     </>
   );
 }

@@ -9,7 +9,6 @@ const navLinks = [
   { href: '/programmes', labelKey: 'nav.programmes' },
   { href: '/impact', labelKey: 'nav.impact' },
   { href: '/news', labelKey: 'nav.news' },
-  { href: '/volunteer', labelKey: 'nav.volunteer' },
   { href: '/contact', labelKey: 'nav.contact' },
 ];
 
@@ -69,10 +68,10 @@ export default function Header() {
             <span className={language === 'te' ? 'text-primary font-semibold' : 'text-muted-foreground'}>తెలుగు</span>
           </button>
           <Link
-            href="/donate"
+            href="/volunteer"
             className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-[0.97]"
           >
-            {t('nav.donate')}
+            {t('nav.volunteer')}
           </Link>
         </div>
 
@@ -119,11 +118,11 @@ export default function Header() {
                 </button>
               </div>
               <Link
-                href="/donate"
+                href="/volunteer"
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-base font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:bg-primary/90 active:scale-[0.97]"
               >
-                {t('nav.donate')}
+                {t('nav.volunteer')}
               </Link>
             </div>
           </nav>
