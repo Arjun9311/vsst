@@ -398,7 +398,7 @@ export default function DonateForm() {
           <h3 className="text-lg font-bold text-foreground border-b border-border pb-4 mb-4">{t('donate.step2')}</h3>
           
           {errorMsg && (
-            <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700 animate-shake dark:bg-red-950/20 dark:border-red-900/30 dark:text-red-400">
+            <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700 animate-shake">
               {errorMsg}
             </div>
           )}
@@ -480,9 +480,9 @@ export default function DonateForm() {
               </p>
             </div>
           ) : (
-            <div className="rounded-xl border border-amber-200 bg-amber-500/5 p-5 dark:border-amber-900/30">
-              <h4 className="text-sm font-bold text-amber-800 dark:text-amber-400">{t('donate.form.fcra')}</h4>
-              <p className="text-xs text-amber-700/80 dark:text-amber-400/80 leading-normal mt-1">
+            <div className="rounded-xl border border-amber-200 bg-amber-500/5 p-5">
+              <h4 className="text-sm font-bold text-amber-800">{t('donate.form.fcra')}</h4>
+              <p className="text-xs text-amber-700/80 leading-normal mt-1">
                 {t('donate.form.fcraDesc')}
               </p>
             </div>

@@ -169,7 +169,7 @@ export default function VolunteerForm() {
       <h3 className="text-xl font-extrabold text-foreground border-b border-border pb-4 mb-4">{t('volunteer.form.title')}</h3>
 
       {errorMsg && (
-        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700 animate-shake dark:bg-red-950/20 dark:border-red-900/30 dark:text-red-400">
+        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700 animate-shake">
           {errorMsg}
         </div>
       )}
