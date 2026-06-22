@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { Prisma } from '@prisma/client';
 import { razorpayClient } from '@/lib/payments/razorpay';
 import { createDonationOrderSchema } from '@/lib/validation';
 import { encrypt } from '@/lib/crypto';
@@ -29,7 +30,7 @@ export async function POST(req: NextRequest) {
     const clientIp = req.headers.get('x-forwarded-for') || '127.0.0.1';
 
     // Transaction to safely create/update Donor and log donation order
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
       // Find or create donor (email is unique lookup)
       let donor = await tx.donor.findUnique({
         where: { email: donorDetails.email },
