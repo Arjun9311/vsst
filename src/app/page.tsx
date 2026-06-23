@@ -177,7 +177,7 @@ export default function Home() {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
             {helpCards.map((card) => (
               <Link
-                key={card.href}
+                key={card.titleKey}
                 href={card.href}
                 className="group relative flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center transition-all hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
