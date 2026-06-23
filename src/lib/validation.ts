@@ -29,20 +29,6 @@ export const contactSubmissionSchema = z.object({
   }),
 });
 
-export const volunteerRegistrationSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters').max(120),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, 'Invalid phone number format').optional().nullable(),
-  city: z.string().min(2, 'City must be at least 2 characters').max(60),
-  skills: z.array(z.string()).min(1, 'Please select at least one skill'),
-  availability: z.object({
-    days: z.array(z.string()).min(1, 'Please select at least one day'),
-    hours_per_week: z.number().min(1, 'Minimum 1 hour per week required'),
-  }),
-  consent: z.literal(true, {
-    message: 'DPDP consent is mandatory to process data',
-  }),
-});
 
 export const admissionEnquirySchema = z.object({
   guardianName: z.string().min(2, 'Guardian name must be at least 2 characters').max(120),

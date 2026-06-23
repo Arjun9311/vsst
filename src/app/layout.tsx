@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     "Vishwashanthi Shrushti Seva Trust",
     "charitable trust India",
     "orphanage Hyderabad",
-    "volunteer for children",
     "NGO Telangana",
     "child education India",
     "NGO support India",
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vishwashanthi Shrushti Seva Trust — Transforming Lives Through Care & Education",
     description:
-      "Volunteer or support orphaned children, education programmes, and women's development in Telangana, India.",
+      "Support orphaned children, education programmes, and women's development in Telangana, India.",
     url: "https://vssevatrust.com",
     siteName: "Vishwashanthi Shrushti Seva Trust",
     locale: "en_IN",

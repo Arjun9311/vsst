@@ -34,12 +34,12 @@ const programmes = [
 const helpCards = [
   {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
     ),
-    titleKey: "home.help.volunteer.title",
-    descriptionKey: "home.help.volunteer.desc",
-    href: "/volunteer",
-    ctaKey: "home.help.volunteer.cta",
+    titleKey: "home.help.donate.title",
+    descriptionKey: "home.help.donate.desc",
+    href: "/contact",
+    ctaKey: "home.help.donate.cta",
     primary: true,
   },
   {
@@ -88,16 +88,16 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
               <Link
-                href="/volunteer"
+                href="/programmes"
                 className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-[0.97]"
               >
-                {t('nav.volunteer')}
+                {t('home.hero.ctaWork')}
               </Link>
               <Link
-                href="/programmes"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-full border-2 border-border px-8 py-3.5 text-base font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
-                {t('home.hero.ctaWork')}
+                {t('nav.contact')}
               </Link>
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
             {helpCards.map((card) => (
               <Link
                 key={card.href}

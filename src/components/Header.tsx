@@ -67,12 +67,6 @@ export default function Header() {
             <span className="text-border">|</span>
             <span className={language === 'te' ? 'text-primary font-semibold' : 'text-muted-foreground'}>తెలుగు</span>
           </button>
-          <Link
-            href="/volunteer"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:scale-[0.97]"
-          >
-            {t('nav.volunteer')}
-          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -117,13 +111,6 @@ export default function Header() {
                   <span className={language === 'te' ? 'text-primary font-semibold' : 'text-muted-foreground'}>తెలుగు</span>
                 </button>
               </div>
-              <Link
-                href="/volunteer"
-                onClick={() => setMobileOpen(false)}
-                className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-base font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:bg-primary/90 active:scale-[0.97]"
-              >
-                {t('nav.volunteer')}
-              </Link>
             </div>
           </nav>
         </div>

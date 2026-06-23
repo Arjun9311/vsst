@@ -138,7 +138,7 @@ export default function AboutClient() {
           <h2 className="text-2xl font-bold text-foreground">{t('about.cta.title')}</h2>
           <p className="mt-3 text-muted-foreground">{t('about.cta.desc')}</p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link href="/volunteer" className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:bg-primary/90 active:scale-[0.97]">{t('nav.volunteer')}</Link>
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:bg-primary/90 active:scale-[0.97]">{t('nav.contact')}</Link>
           </div>
         </div>
       </section>

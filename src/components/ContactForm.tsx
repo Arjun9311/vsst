@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactForm() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -141,7 +141,7 @@ export default function ContactForm() {
 
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="contact-phone" className="block text-sm font-medium text-foreground mb-1.5">{t('contact.form.phone')} <span className="text-muted-foreground text-xs">({t('volunteer.form.phone').includes('ఫోన్') ? 'ఐచ్ఛికం' : 'optional'})</span></label>
+          <label htmlFor="contact-phone" className="block text-sm font-medium text-foreground mb-1.5">{t('contact.form.phone')} <span className="text-muted-foreground text-xs">({language === 'te' ? 'ఐచ్ఛికం' : 'optional'})</span></label>
           <input
             type="tel"
             id="contact-phone"
