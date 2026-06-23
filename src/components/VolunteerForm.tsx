@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 const availableSkills = [
@@ -134,8 +133,9 @@ export default function VolunteerForm() {
       setSelectedDays([]);
       setHoursPerWeek(4);
       setConsent(false);
-    } catch (err: any) {
-      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+      setErrorMsg(message);
     } finally {
       setIsSubmitting(false);
     }

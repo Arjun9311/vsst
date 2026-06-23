@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { Prisma } from '@prisma/client';
 import {
   contactSubmissionSchema,
   volunteerRegistrationSchema,
@@ -14,7 +15,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
     }
 
-    const formType = body.formType || body.form_type;
 
     // Handle Volunteer registrations separately
     if (body.skills || body.availability) {
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
           phone: encryptedPhone ? new Uint8Array(encryptedPhone) : null,
           city,
           skills,
-          availability: availability as any, // Cast as availability is Prisma Json
+          availability: availability as unknown as Prisma.InputJsonValue, // Cast as availability is Prisma Json
           status: 'pending',
           consent_at: new Date(),
         },
@@ -83,10 +83,11 @@ export async function POST(req: NextRequest) {
       message: 'Inquiry submitted successfully',
       id: contactSubmission.id,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Contact submission failed:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      { error: 'Failed to process inquiry submission', message: error.message },
+      { error: 'Failed to process inquiry submission', message: errorMessage },
       { status: 500 }
     );
   }

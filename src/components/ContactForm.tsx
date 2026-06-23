@@ -75,8 +75,9 @@ export default function ContactForm() {
       setFormType('general');
       setMessage('');
       setConsent(false);
-    } catch (err: any) {
-      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+      setErrorMsg(message);
     } finally {
       setIsSubmitting(false);
     }

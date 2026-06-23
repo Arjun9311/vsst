@@ -7,6 +7,7 @@ if (!stripeSecretKey) {
 }
 
 export const stripeClient = new Stripe(stripeSecretKey || 'mock_secret', {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   apiVersion: '2025-02-18' as any,
 });
 
