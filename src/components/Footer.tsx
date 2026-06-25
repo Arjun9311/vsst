@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
+import logoImg from '../../public/logo.png';
 
 const quickLinks = [
   { href: '/about', labelKey: 'footer.link.about' },
@@ -30,7 +31,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Vishwashanthi Shrushti Seva Trust – Home">
               <img
-                src="/vsst/logo.png"
+                src={logoImg.src}
                 alt="Vishwashanthi Shrushti Seva Trust Logo"
                 className="h-10 w-10 object-contain"
               />

@@ -48,8 +48,9 @@ export default function ContactForm() {
       return;
     }
 
+    const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/vsst') ? '/vsst' : '';
     try {
-      const res = await fetch('/api/contact/submit', {
+      const res = await fetch(`${basePath}/api/contact/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

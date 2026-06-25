@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import logoImg from '../../public/logo.png';
 
 const navLinks = [
   { href: '/about', labelKey: 'nav.about' },
@@ -34,7 +35,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="Vishwashanthi Shrushti Seva Trust – Home">
           <img
-            src="/vsst/logo.png"
+            src={logoImg.src}
             alt="Vishwashanthi Shrushti Seva Trust Logo"
             className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
           />
