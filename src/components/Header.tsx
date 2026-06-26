@@ -8,7 +8,7 @@ import logoImg from '../../public/logo.png';
 const navLinks = [
   { href: '/about', labelKey: 'nav.about' },
   { href: '/programmes', labelKey: 'nav.programmes' },
-  { href: '/impact', labelKey: 'nav.impact' },
+  { href: '/gallery', labelKey: 'nav.gallery' },
   { href: '/news', labelKey: 'nav.news' },
   { href: '/contact', labelKey: 'nav.contact' },
 ];

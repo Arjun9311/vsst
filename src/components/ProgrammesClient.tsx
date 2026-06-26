@@ -1,7 +1,9 @@
 'use client';
 
+import React, { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import ProgrammeModal from "@/components/ProgrammeModal";
 
 const programmes = [
   {
@@ -56,6 +58,7 @@ const programmes = [
 
 export default function ProgrammesClient() {
   const { t } = useLanguage();
+  const [activeProgramme, setActiveProgramme] = useState<string | null>(null);
 
   return (
     <>
@@ -85,17 +88,18 @@ export default function ProgrammesClient() {
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {programmes.map((prog) => (
-            <Link
+            <button
               key={prog.slug}
-              href={`/programmes/${prog.slug}`}
-              className="group flex flex-col rounded-2xl border border-border bg-card p-7 transition-all hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              onClick={() => setActiveProgramme(prog.slug)}
+              type="button"
+              className="group flex flex-col rounded-2xl border border-border bg-card p-7 text-left transition-all hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring cursor-pointer"
             >
               <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${prog.gradient} text-white transition-transform group-hover:scale-110`}>
                 {prog.icon}
               </div>
               <h2 className="text-lg font-semibold text-card-foreground">{t(prog.titleKey)}</h2>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{t(prog.descriptionKey)}</p>
-              <div className="mt-4 flex items-center justify-between">
+              <div className="mt-4 flex items-center justify-between w-full">
                 <span className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
                   {t(prog.statsKey)}
                 </span>
@@ -104,10 +108,17 @@ export default function ProgrammesClient() {
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-0.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </span>
               </div>
-            </Link>
+            </button>
           ))}
         </div>
       </section>
+
+      {activeProgramme && (
+        <ProgrammeModal 
+          slug={activeProgramme} 
+          onClose={() => setActiveProgramme(null)} 
+        />
+      )}
     </>
   );
 }
