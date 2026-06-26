@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#121212]/95 backdrop-blur-xl">
       {/* Skip to content – first focusable element for a11y */}
       <a
         href="#main-content"
@@ -37,10 +37,12 @@ export default function Header() {
           <img
             src={logoImg.src}
             alt="Vishwashanthi Shrushti Seva Trust Logo"
-            className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
+            className="h-10 w-10 object-contain transition-transform group-hover:scale-105 rounded-full bg-white p-0.5"
           />
-          <span className="hidden sm:block">
-            <span className="text-sm font-bold text-foreground tracking-tight">Vishwashanthi Shrushti Seva Trust</span>
+          <span className="block">
+            <span className="text-[10px] min-[400px]:text-[11px] sm:text-sm font-bold tracking-tight shadow-dance-text whitespace-nowrap block">
+              Vishwashanthi Shrushti Seva Trust
+            </span>
           </span>
         </Link>
 
@@ -50,7 +52,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="rounded-md px-3.5 py-2 text-sm font-medium text-slate-300 transition-colors hover:text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               {t(link.labelKey)}
             </Link>
@@ -61,19 +63,19 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-3">
           <button
             onClick={toggleLanguage}
-            className="rounded-full px-3 py-1.5 text-xs font-medium border border-border transition-colors hover:bg-muted flex items-center gap-1"
+            className="rounded-full px-3 py-1.5 text-xs font-medium border border-white/10 transition-colors hover:bg-white/10 flex items-center gap-1 text-slate-300"
             aria-label="Toggle language / భాషను మార్చండి"
           >
-            <span className={language === 'en' ? 'text-primary font-semibold' : 'text-muted-foreground'}>EN</span>
-            <span className="text-border">|</span>
-            <span className={language === 'te' ? 'text-primary font-semibold' : 'text-muted-foreground'}>తెలుగు</span>
+            <span className={language === 'en' ? 'text-primary font-semibold' : 'text-slate-400'}>EN</span>
+            <span className="text-white/20">|</span>
+            <span className={language === 'te' ? 'text-primary font-semibold' : 'text-slate-400'}>తెలుగు</span>
           </button>
         </div>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden flex h-10 w-10 items-center justify-center rounded-md text-foreground hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          className="lg:hidden flex h-10 w-10 items-center justify-center rounded-md text-slate-200 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
         >
@@ -87,29 +89,29 @@ export default function Header() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-background animate-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden border-t border-white/10 bg-[#121212] animate-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col gap-1 px-4 py-4" aria-label="Mobile navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className="rounded-md px-3 py-3 text-base font-medium text-slate-200 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 {t(link.labelKey)}
               </Link>
             ))}
-            <div className="mt-3 flex flex-col gap-3 border-t border-border pt-4">
+            <div className="mt-3 flex flex-col gap-3 border-t border-white/10 pt-4">
               <div className="flex items-center justify-between px-3 py-1">
-                <span className="text-sm font-medium text-muted-foreground">Language / భాష</span>
+                <span className="text-sm font-medium text-slate-400">Language / భాష</span>
                 <button
                   onClick={toggleLanguage}
-                  className="rounded-full px-3 py-1.5 text-xs font-medium border border-border transition-colors hover:bg-muted flex items-center gap-1"
+                  className="rounded-full px-3 py-1.5 text-xs font-medium border border-white/10 transition-colors hover:bg-white/10 flex items-center gap-1 text-slate-200"
                   aria-label="Toggle language / భాషను మార్చండి"
                 >
-                  <span className={language === 'en' ? 'text-primary font-semibold' : 'text-muted-foreground'}>EN</span>
-                  <span className="text-border">|</span>
-                  <span className={language === 'te' ? 'text-primary font-semibold' : 'text-muted-foreground'}>తెలుగు</span>
+                  <span className={language === 'en' ? 'text-primary font-semibold' : 'text-slate-400'}>EN</span>
+                  <span className="text-white/20">|</span>
+                  <span className={language === 'te' ? 'text-primary font-semibold' : 'text-slate-400'}>తెలుగు</span>
                 </button>
               </div>
             </div>

@@ -193,7 +193,7 @@ export const programmesData: Record<string, Record<'en' | 'te', ProgrammeDetail>
       title: "Care for the Aged",
       description: "Planned residential homes for elderly men and women without family support, ensuring dignity, medical care, and companionship.",
       longDescription: "Nobody should be left alone or neglected in their twilight years. Our upcoming Care for the Aged initiative is designed to build a free, peaceful, and fully-equipped residential facility for elderly citizens who have been abandoned or lack family support. We aim to provide nutritional support, complete healthcare, and a sense of family.",
-      stats: "Coming Soon (Infrastructure phase)",
+      stats: "Ongoing initiatives",
       objectives: [
         "Construct a dedicated, barrier-free residential facility for elderly citizens.",
         "Provide 24/7 care, balanced meals, and regular specialized health checkups.",
@@ -210,7 +210,7 @@ export const programmesData: Record<string, Record<'en' | 'te', ProgrammeDetail>
       title: "వృద్ధుల సంరక్షణ",
       description: "కుటుంబ మద్దతు లేని వృద్ధుల కోసం ఉచిత నివాసం, గౌరవప్రదమైన జీవనం, వైద్య సంరక్షణ మరియు స్నేహపూర్వక వాతావరణం.",
       longDescription: "జీవిత చరమాంకంలో ఎవరూ ఒంటరిగా మిగిలిపోకూడదు లేదా నిర్లక్ష్యం చేయబడకూడదు. మా రాబోయే వృద్ధుల సంరక్షణ కార్యక్రమం అనాథలు లేదా కుటుంబ మద్దతు లేని వృద్ధుల కోసం ఉచిత, ప్రశాంతమైన మరియు పూర్తి సదుపాయాలు గల నివాసాన్ని నిర్మించడానికి రూపొందించబడింది. మేము వారికి పోషకాహారం, వైద్య సేవలు మరియు కుటుంబ వాతావరణాన్ని అందించాలని లక్ష్యంగా పెట్టుకున్నాము.",
-      stats: "త్వరలో అందుబాటులోకి వస్తుంది (నిర్మాణ దశలో ఉంది)",
+      stats: "కొనసాగుతున్న కార్యక్రమాలు",
       objectives: [
         "వృద్ధుల కోసం ప్రత్యేకమైన, అన్ని వసతులు గల నివాస భవనం నిర్మించడం.",
         "24/7 సంరక్షణ, సమతుల్య భోజనం మరియు క్రమబద్ధమైన ప్రత్యేక వైద్య పరీక్షలు.",

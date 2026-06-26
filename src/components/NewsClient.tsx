@@ -10,6 +10,27 @@ import img2 from "../../public/news/news_clipping_2.jpg";
 import img3 from "../../public/news/news_clipping_3.jpg";
 import img4 from "../../public/news/news_clipping_4.jpg";
 import img5 from "../../public/news/news_clipping_5.jpg";
+import img6 from "../../public/news/news_clipping_6.jpg";
+import img7 from "../../public/news/news_clipping_7.jpg";
+import img8 from "../../public/news/news_clipping_8.jpg";
+import img9 from "../../public/news/news_clipping_9.jpg";
+import img10 from "../../public/news/news_clipping_10.jpg";
+import img11 from "../../public/news/news_clipping_11.jpg";
+import img12 from "../../public/news/news_clipping_12.jpg";
+import img13 from "../../public/news/news_clipping_13.jpg";
+import img14 from "../../public/news/news_clipping_14.jpg";
+import img15 from "../../public/news/news_clipping_15.jpg";
+import img16 from "../../public/news/news_clipping_16.jpg";
+import img17 from "../../public/news/news_clipping_17.jpg";
+import img18 from "../../public/news/news_clipping_18.jpg";
+import img19 from "../../public/news/news_clipping_19.jpg";
+import img20 from "../../public/news/news_clipping_20.jpg";
+import img21 from "../../public/news/news_clipping_21.jpg";
+import img22 from "../../public/news/news_clipping_22.jpg";
+import img23 from "../../public/news/news_clipping_23.jpg";
+import img24 from "../../public/news/news_clipping_24.jpg";
+import img25 from "../../public/news/news_clipping_25.jpg";
+import img26 from "../../public/news/news_clipping_26.jpg";
 
 interface NewsItem {
   id: number;
@@ -21,13 +42,6 @@ interface NewsItem {
 
 const newsItems: NewsItem[] = [
   {
-    id: 1,
-    image: img1.src,
-    titleKey: "news.item1.title",
-    descKey: "news.item1.desc",
-    dateKey: "news.item1.date",
-  },
-  {
     id: 2,
     image: img2.src,
     titleKey: "news.item2.title",
@@ -35,11 +49,32 @@ const newsItems: NewsItem[] = [
     dateKey: "news.item2.date",
   },
   {
-    id: 3,
-    image: img3.src,
-    titleKey: "news.item3.title",
-    descKey: "news.item3.desc",
-    dateKey: "news.item3.date",
+    id: 1,
+    image: img1.src,
+    titleKey: "news.item1.title",
+    descKey: "news.item1.desc",
+    dateKey: "news.item1.date",
+  },
+  {
+    id: 8,
+    image: img8.src,
+    titleKey: "news.item8.title",
+    descKey: "news.item8.desc",
+    dateKey: "news.item8.date",
+  },
+  {
+    id: 6,
+    image: img6.src,
+    titleKey: "news.item6.title",
+    descKey: "news.item6.desc",
+    dateKey: "news.item6.date",
+  },
+  {
+    id: 7,
+    image: img7.src,
+    titleKey: "news.item7.title",
+    descKey: "news.item7.desc",
+    dateKey: "news.item7.date",
   },
   {
     id: 4,
@@ -49,11 +84,144 @@ const newsItems: NewsItem[] = [
     dateKey: "news.item4.date",
   },
   {
+    id: 3,
+    image: img3.src,
+    titleKey: "news.item3.title",
+    descKey: "news.item3.desc",
+    dateKey: "news.item3.date",
+  },
+  {
     id: 5,
     image: img5.src,
     titleKey: "news.item5.title",
     descKey: "news.item5.desc",
     dateKey: "news.item5.date",
+  },
+  {
+    id: 26,
+    image: img26.src,
+    titleKey: "news.item26.title",
+    descKey: "news.item26.desc",
+    dateKey: "news.item26.date",
+  },
+  {
+    id: 10,
+    image: img10.src,
+    titleKey: "news.item10.title",
+    descKey: "news.item10.desc",
+    dateKey: "news.item10.date",
+  },
+  {
+    id: 20,
+    image: img20.src,
+    titleKey: "news.item20.title",
+    descKey: "news.item20.desc",
+    dateKey: "news.item20.date",
+  },
+  {
+    id: 22,
+    image: img22.src,
+    titleKey: "news.item22.title",
+    descKey: "news.item22.desc",
+    dateKey: "news.item22.date",
+  },
+  {
+    id: 19,
+    image: img19.src,
+    titleKey: "news.item19.title",
+    descKey: "news.item19.desc",
+    dateKey: "news.item19.date",
+  },
+  {
+    id: 13,
+    image: img13.src,
+    titleKey: "news.item13.title",
+    descKey: "news.item13.desc",
+    dateKey: "news.item13.date",
+  },
+  {
+    id: 15,
+    image: img15.src,
+    titleKey: "news.item15.title",
+    descKey: "news.item15.desc",
+    dateKey: "news.item15.date",
+  },
+  {
+    id: 16,
+    image: img16.src,
+    titleKey: "news.item16.title",
+    descKey: "news.item16.desc",
+    dateKey: "news.item16.date",
+  },
+  {
+    id: 21,
+    image: img21.src,
+    titleKey: "news.item21.title",
+    descKey: "news.item21.desc",
+    dateKey: "news.item21.date",
+  },
+  {
+    id: 23,
+    image: img23.src,
+    titleKey: "news.item23.title",
+    descKey: "news.item23.desc",
+    dateKey: "news.item23.date",
+  },
+  {
+    id: 9,
+    image: img9.src,
+    titleKey: "news.item9.title",
+    descKey: "news.item9.desc",
+    dateKey: "news.item9.date",
+  },
+  {
+    id: 14,
+    image: img14.src,
+    titleKey: "news.item14.title",
+    descKey: "news.item14.desc",
+    dateKey: "news.item14.date",
+  },
+  {
+    id: 11,
+    image: img11.src,
+    titleKey: "news.item11.title",
+    descKey: "news.item11.desc",
+    dateKey: "news.item11.date",
+  },
+  {
+    id: 17,
+    image: img17.src,
+    titleKey: "news.item17.title",
+    descKey: "news.item17.desc",
+    dateKey: "news.item17.date",
+  },
+  {
+    id: 18,
+    image: img18.src,
+    titleKey: "news.item18.title",
+    descKey: "news.item18.desc",
+    dateKey: "news.item18.date",
+  },
+  {
+    id: 24,
+    image: img24.src,
+    titleKey: "news.item24.title",
+    descKey: "news.item24.desc",
+    dateKey: "news.item24.date",
+  },
+  {
+    id: 12,
+    image: img12.src,
+    titleKey: "news.item12.title",
+    descKey: "news.item12.desc",
+    dateKey: "news.item12.date",
+  },
+  {
+    id: 25,
+    image: img25.src,
+    titleKey: "news.item25.title",
+    descKey: "news.item25.desc",
+    dateKey: "news.item25.date",
   },
 ];
 

@@ -37,9 +37,13 @@ export default function ContactClient() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0 text-primary"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <p className="leading-relaxed">{t('contact.sidebar.address')}</p>
               </div>
-              <div className="flex gap-3 items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <a href="tel:+918074589091" className="hover:text-foreground font-semibold transition-colors">+91 80745 89091</a>
+              <div className="flex gap-3 items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-primary mt-1"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <div className="flex flex-col space-y-1.5">
+                  <a href="tel:+918074589091" className="hover:text-foreground font-semibold transition-colors">+91 80745 89091</a>
+                  <a href="tel:+919848244088" className="hover:text-foreground font-semibold transition-colors">+91 98482 44088</a>
+                  <a href="tel:+917702528018" className="hover:text-foreground font-semibold transition-colors">+91 77025 28018</a>
+                </div>
               </div>
               <div className="flex gap-3 items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-primary"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -78,6 +82,82 @@ export default function ContactClient() {
                 +91 80745 89091
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Map Section */}
+      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="relative rounded-2xl border border-border bg-card overflow-hidden shadow-sm h-[450px]">
+          {/* Custom Info Card Overlay (Large screens) */}
+          <div className="hidden md:block absolute top-6 left-6 z-10 max-w-xs lg:max-w-sm rounded-xl border border-border bg-card/95 backdrop-blur-md p-5 shadow-lg">
+            <h3 className="font-bold text-foreground text-base">
+              {t('nav.about').includes('మా గురించి') ? 'విశ్వశాంతి సృష్టి సేవ ట్రస్ట్' : 'Vishwashanthi Shrushti Seva Trust'}
+            </h3>
+            <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+              {t('contact.sidebar.address')}
+            </p>
+            <div className="mt-4 flex gap-3">
+              <a
+                href="https://maps.app.goo.gl/jKainuA2nFkR4Y6WA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors shadow-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                {t('nav.about').includes('మా గురించి') ? 'దిశలు' : 'Directions'}
+              </a>
+              <a
+                href="https://maps.app.goo.gl/jKainuA2nFkR4Y6WA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-3.5 py-2 text-xs font-semibold text-foreground hover:bg-muted transition-colors"
+              >
+                {t('nav.about').includes('మా గురించి') ? 'మ్యాప్‌లో చూడండి' : 'View on Map'}
+              </a>
+            </div>
+          </div>
+
+          {/* Iframe Google Map */}
+          <iframe
+            src="https://maps.google.com/maps?q=17.377385,78.569423&z=17&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full"
+            title="Vishwashanthi Shrushti Seva Trust Location Map"
+          ></iframe>
+        </div>
+        
+        {/* Info Card (Mobile view, below the map) */}
+        <div className="block md:hidden mt-4 rounded-xl border border-border bg-card p-5 shadow-sm">
+          <h3 className="font-bold text-foreground text-base">
+            {t('nav.about').includes('మా గురించి') ? 'విశ్వశాంతి సృష్టి సేవ ట్రస్ట్' : 'Vishwashanthi Shrushti Seva Trust'}
+          </h3>
+          <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+            {t('contact.sidebar.address')}
+          </p>
+          <div className="mt-4 flex gap-3">
+            <a
+              href="https://maps.app.goo.gl/jKainuA2nFkR4Y6WA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              {t('nav.about').includes('మా గురించి') ? 'దిశలు' : 'Directions'}
+            </a>
+            <a
+              href="https://maps.app.goo.gl/jKainuA2nFkR4Y6WA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-3.5 py-2 text-xs font-semibold text-foreground hover:bg-muted transition-colors"
+            >
+              {t('nav.about').includes('మా గురించి') ? 'మ్యాప్‌లో చూడండి' : 'View on Map'}
+            </a>
           </div>
         </div>
       </section>

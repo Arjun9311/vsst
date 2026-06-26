@@ -88,7 +88,7 @@ export default function ProgrammeModal({ slug, onClose }: ProgrammeModalProps) {
         {/* Content */}
         <div className="p-6 sm:p-8 md:p-10">
           <div className="flex flex-col gap-6">
-            
+
             {/* Title Section */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-white`}>

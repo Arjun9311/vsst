@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import ProgrammeModal from "@/components/ProgrammeModal";
@@ -59,6 +59,20 @@ const programmes = [
 export default function ProgrammesClient() {
   const { t } = useLanguage();
   const [activeProgramme, setActiveProgramme] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && ['children', 'education', 'women', 'hiv', 'environment', 'aged'].includes(hash)) {
+        setActiveProgramme(hash);
+      }
+    };
+
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   return (
     <>

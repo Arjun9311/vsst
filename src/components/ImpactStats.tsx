@@ -52,7 +52,7 @@ export default function ImpactStats() {
 
   const stats = [
     { target: 120, label: t('impact.stats.children') },
-    { target: 24, label: t('impact.stats.years') },
+    { target: 40, label: t('impact.stats.years') },
     { target: 150000, label: t('impact.stats.meals') },
     { target: 500, label: t('impact.stats.students') },
   ];

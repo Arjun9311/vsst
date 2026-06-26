@@ -13,11 +13,11 @@ const quickLinks = [
 ];
 
 const programmeLinks = [
-  { href: '/programmes/children', labelKey: 'footer.link.children' },
-  { href: '/programmes/education', labelKey: 'footer.link.education' },
-  { href: '/programmes/women', labelKey: 'footer.link.women' },
-  { href: '/programmes/hiv', labelKey: 'footer.link.hiv' },
-  { href: '/programmes/environment', labelKey: 'footer.link.environment' },
+  { href: '/programmes#children', labelKey: 'footer.link.children' },
+  { href: '/programmes#education', labelKey: 'footer.link.education' },
+  { href: '/programmes#women', labelKey: 'footer.link.women' },
+  { href: '/programmes#hiv', labelKey: 'footer.link.hiv' },
+  { href: '/programmes#environment', labelKey: 'footer.link.environment' },
 ];
 
 export default function Footer() {
@@ -97,9 +97,11 @@ export default function Footer() {
                 Medchal Malkajgiri District,<br />
                 Telangana, India
               </p>
-              <p>
+              <div className="flex flex-col space-y-1.5 pt-1">
                 <a href="tel:+918074589091" className="transition-colors hover:text-foreground">+91 80745 89091</a>
-              </p>
+                <a href="tel:+919848244088" className="transition-colors hover:text-foreground">+91 98482 44088</a>
+                <a href="tel:+917702528018" className="transition-colors hover:text-foreground">+91 77025 28018</a>
+              </div>
               <p>
                 <a href="mailto:contact@vssevatrust.com" className="transition-colors hover:text-foreground">contact@vssevatrust.com</a>
               </p>

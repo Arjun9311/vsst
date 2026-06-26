@@ -7,20 +7,29 @@ import { useLanguage } from '@/context/LanguageContext';
 // Import curated selection of images directly to let Next.js resolve basePaths automatically
 import img1 from "../../public/gallery/IMG-20260622-WA0006.jpg";
 import img2 from "../../public/gallery/IMG-20260622-WA0007.jpg";
-import img3 from "../../public/gallery/IMG-20260622-WA0008.jpg";
-import img4 from "../../public/gallery/IMG-20260622-WA0009.jpg";
-import img5 from "../../public/gallery/IMG-20260622-WA0010.jpg";
-import img6 from "../../public/gallery/IMG-20260622-WA0011.jpg";
-import img7 from "../../public/gallery/IMG-20260622-WA0012.jpg";
-import img8 from "../../public/gallery/IMG-20260622-WA0013.jpg";
-import img9 from "../../public/gallery/IMG-20260622-WA0014.jpg";
-import img10 from "../../public/gallery/IMG-20260622-WA0015.jpg";
-import img11 from "../../public/gallery/IMG-20260622-WA0016.jpg";
-import img12 from "../../public/gallery/IMG-20260622-WA0017.jpg";
-import img13 from "../../public/gallery/IMG-20260622-WA0018.jpg";
-import img14 from "../../public/gallery/IMG-20260622-WA0019.jpg";
-import img15 from "../../public/gallery/IMG-20260622-WA0020.jpg";
-import img16 from "../../public/gallery/IMG-20260622-WA0021.jpg";
+import img3 from "../../public/gallery/IMG-20260622-WA0009.jpg";
+import img4 from "../../public/gallery/IMG-20260622-WA0012.jpg";
+import img5 from "../../public/gallery/IMG-20260622-WA0015.jpg";
+import img6 from "../../public/gallery/IMG-20260622-WA0018.jpg";
+import img7 from "../../public/gallery/IMG-20260622-WA0019.jpg";
+import img8 from "../../public/gallery/IMG-20260622-WA0023.jpg";
+import img9 from "../../public/gallery/gallery_image_9.jpg";
+import img10 from "../../public/gallery/gallery_image_10.jpg";
+import img11 from "../../public/gallery/gallery_image_11.png";
+import img12 from "../../public/gallery/gallery_image_12.jpg";
+import img13 from "../../public/gallery/gallery_image_13.png";
+import img14 from "../../public/gallery/gallery_image_14.jpg";
+import img15 from "../../public/gallery/gallery_image_15.jpg";
+import img16 from "../../public/gallery/gallery_image_16.jpg";
+import img17 from "../../public/gallery/gallery_image_17.png";
+import img18 from "../../public/gallery/gallery_image_18.jpg";
+import img19 from "../../public/gallery/gallery_image_19.jpg";
+import img20 from "../../public/gallery/gallery_image_20.jpg";
+import img21 from "../../public/gallery/gallery_image_21.jpg";
+import img22 from "../../public/gallery/gallery_image_22.jpg";
+import img23 from "../../public/gallery/gallery_image_23.jpg";
+import img24 from "../../public/gallery/gallery_image_24.jpg";
+import img25 from "../../public/gallery/gallery_image_25.jpg";
 
 const galleryImages = [
   { src: img1.src, alt: "Trust Activity 1" },
@@ -39,6 +48,15 @@ const galleryImages = [
   { src: img14.src, alt: "Trust Activity 14" },
   { src: img15.src, alt: "Trust Activity 15" },
   { src: img16.src, alt: "Trust Activity 16" },
+  { src: img17.src, alt: "Trust Activity 17" },
+  { src: img18.src, alt: "Trust Activity 18" },
+  { src: img19.src, alt: "Trust Activity 19" },
+  { src: img20.src, alt: "Trust Activity 20" },
+  { src: img21.src, alt: "Trust Activity 21" },
+  { src: img22.src, alt: "Trust Activity 22" },
+  { src: img23.src, alt: "Trust Activity 23" },
+  { src: img24.src, alt: "Trust Activity 24" },
+  { src: img25.src, alt: "Trust Activity 25" },
 ];
 
 export default function Gallery() {
